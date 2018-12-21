@@ -9,6 +9,16 @@ using Server.Protocol;
 
 namespace ClientService
 {
+  enum ClientStatus
+  {
+    None = 0,
+    Login = 1,
+    CreateRole = 2,
+    InitGame = 3,
+    Req1 = 4,
+    Logout = 99,
+  };
+
   public class Client
   {
     static int sGuid = 0;
