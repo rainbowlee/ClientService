@@ -81,7 +81,7 @@ namespace ClientService
                       .Append(":")
                       .Append(1.ToString())
                       .Append(":")
-                      .Append("base")
+                      .Append("base1222")
                       .Append(":")
                       .Append("xxtxddasssssa")
                       .Append(":")
@@ -113,6 +113,34 @@ namespace ClientService
     {
       TCPInPacket inPacket = sender as TCPInPacket;
       LogSys.Log(LOG_TYPE.ERROR, "cmdid={0} bytes={1}", inPacket.PacketCmdID, DataHelper.Bytes2HexString(inPacket.GetPacketBytes()));
+
+
+      try
+      {
+        if (inPacket.PacketCmdID == 100)
+        {
+          //cmdData = new UTF8Encoding().GetString(data, 0, count);
+          string cmdData = new System.Text.UTF8Encoding().GetString(inPacket.GetPacketBytes(), 0, inPacket.GetPacketBytes().Length);
+          string[] fields = cmdData.Split(':');
+          //LogManager.WriteLog(LogTypes.Info, string.Format("登录指令参数, CMD={0}, Client={1}, Recv={2}", (TCPGameServerCmds)nID, Global.GetSocketRemoteEndPoint(socket), cmdData));
+          //if (fields.Length < 10)
+          //{
+          //  LogManager.WriteLog(LogTypes.Error, string.Format("指令参数个数错误, CMD={0}, Client={1}, Recv={2}", (TCPGameServerCmds)nID, Global.GetSocketRemoteEndPoint(socket), fields.Length));
+          //  return TCPProcessCmdResults.RESULT_FAILED;
+          //}
+          int error = Convert.ToInt32(fields[0]);
+          string userID = fields[1];
+          LogSys.Log(LOG_TYPE.ERROR, "err={0} userID={1}", error, userID);
+        }
+        else
+        {
+
+        }
+      }
+      catch (Exception ex)
+      {
+
+      }
       return true;
     }
 

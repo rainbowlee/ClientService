@@ -47,8 +47,8 @@ namespace ClientService
     private void SecondsLogic()
     {
       Client client = new Client();
-      //client.Connect("223.111.148.246",4403);
-      client.Connect("127.0.0.1", 4403);
+      client.Connect("223.111.148.246",4403);
+      //client.Connect("127.0.0.1", 4403);
       client.SendLogin();
       LogSys.Log(LOG_TYPE.DEBUG, "test SecondsLogic");
     }
@@ -57,7 +57,7 @@ namespace ClientService
     {
       while(true)
       {
-        if (m_LastTimeTick + TimeSpan.TicksPerSecond*100 <= DateTime.Now.Ticks)
+        if (m_LastTimeTick + TimeSpan.TicksPerSecond <= DateTime.Now.Ticks)
         {
           m_LastTimeTick = DateTime.Now.Ticks;
           SecondsLogic();
