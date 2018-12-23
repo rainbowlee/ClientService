@@ -40,6 +40,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\LogSys.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="ServerCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ServerCommon.dll</HintPath>
@@ -52,11 +56,199 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="zlib.net, Version=1.0.3.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\zlib.net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlowfishEngine.cs" />
     <Compile Include="CRC32.cs" />
+    <Compile Include="data\ActivitiesData.cs" />
+    <Compile Include="data\ActivityIconStateData.cs" />
+    <Compile Include="data\AddGoodsData.cs" />
+    <Compile Include="data\AwardsItemData.cs" />
+    <Compile Include="data\AwardsItemList.cs" />
+    <Compile Include="data\BangHuiDetailData.cs" />
+    <Compile Include="data\BangHuiItemData.cs" />
+    <Compile Include="data\BangHuiLiBaoData\BangHuiLiBaoData.cs" />
+    <Compile Include="data\BangHuiLingDiItemData.cs" />
+    <Compile Include="data\BangHuiListData.cs" />
+    <Compile Include="data\BangHuiMemberData.cs" />
+    <Compile Include="data\BangHuiMiniData.cs" />
+    <Compile Include="data\BattleEndRoleItem.cs" />
+    <Compile Include="data\BetaTestReward\FanHuanData.cs" />
+    <Compile Include="data\BetaTestReward\UserBetaTestReward.cs" />
+    <Compile Include="data\BiaoCheData.cs" />
+    <Compile Include="data\BossData.cs" />
+    <Compile Include="data\BufferData.cs" />
+    <Compile Include="data\BulletinMsgData.cs" />
+    <Compile Include="data\Caiji\CaijiData.cs" />
+    <Compile Include="data\ChangeEquipData.cs" />
+    <Compile Include="data\ChengJiuData.cs" />
+    <Compile Include="data\ChongZhiConfigItem.cs" />
+    <Compile Include="data\CopySearchTeamData.cs" />
+    <Compile Include="data\CopyTeamData.cs" />
+    <Compile Include="data\CopyTeamMemberData.cs" />
+    <Compile Include="data\DailyActiveData.cs" />
+    <Compile Include="data\DailyBuyLimit\DailyBuyLimitData.cs" />
+    <Compile Include="data\DailyJingMaiData.cs" />
+    <Compile Include="data\DailyTaskData.cs" />
+    <Compile Include="data\Day7ActivityData.cs" />
+    <Compile Include="data\DecorationData.cs" />
+    <Compile Include="data\DeviceAndRoleInfoData.cs" />
+    <Compile Include="data\DJRoomData.cs" />
+    <Compile Include="data\DJRoomRoleData.cs" />
+    <Compile Include="data\DJRoomRolePoint.cs" />
+    <Compile Include="data\DJRoomRolesData.cs" />
+    <Compile Include="data\DJRoomRolesPoint.cs" />
+    <Compile Include="data\ElementHeartConfig.cs" />
+    <Compile Include="data\ElementHeartData.cs" />
+    <Compile Include="data\ElementHeartMsgData.cs" />
+    <Compile Include="data\EquipPropsData.cs" />
+    <Compile Include="data\ExchangeData.cs" />
+    <Compile Include="data\ExtraSetting\ExtraSettingRequestData.cs" />
+    <Compile Include="data\ExtraSetting\ExtraSettingResponseData.cs" />
+    <Compile Include="data\FakeRoleData.cs" />
+    <Compile Include="data\FlashSellData.cs" />
+    <Compile Include="data\FriendData.cs" />
+    <Compile Include="data\FuBenData.cs" />
+    <Compile Include="data\FuBenHistData.cs" />
+    <Compile Include="data\FuBenTongGuanData.cs" />
+    <Compile Include="data\GemOreCarPBData.cs" />
+    <Compile Include="data\GloablData.cs" />
+    <Compile Include="data\GongGaoData.cs" />
+    <Compile Include="data\GoodsData.cs" />
+    <Compile Include="data\GoodsLimitData.cs" />
+    <Compile Include="data\GoodsPackListData.cs" />
+    <Compile Include="data\HorseData.cs" />
+    <Compile Include="data\HuangChengMapInfoData.cs" />
+    <Compile Include="data\HuodongData.cs" />
+    <Compile Include="data\HuodongPaiHang.cs" />
+    <Compile Include="data\JieriXmlData.cs" />
+    <Compile Include="data\JingJiBeChallengeData.cs" />
+    <Compile Include="data\JingJiChallengeInfoData.cs" />
+    <Compile Include="data\JingJiChallengeResultData.cs" />
+    <Compile Include="data\JingJiDetailData.cs" />
+    <Compile Include="data\JingJiSaveData.cs" />
+    <Compile Include="data\JingLingConfig.cs" />
+    <Compile Include="data\JingLingData.cs" />
+    <Compile Include="data\JingLingMsgData.cs" />
+    <Compile Include="data\JingMaiData.cs" />
+    <Compile Include="data\JiQingHuiKuiData.cs" />
+    <Compile Include="data\JunQiData.cs" />
+    <Compile Include="data\KaiFuActivityData.cs" />
+    <Compile Include="data\KaiFuOnlineAwardData.cs" />
+    <Compile Include="data\KaiFuOnlineInfoData.cs" />
+    <Compile Include="data\Kuafu\BlockRelation.cs" />
+    <Compile Include="data\Kuafu\ClientOtherProperties.cs" />
+    <Compile Include="data\Kuafu\KuafuFubenData.cs" />
+    <Compile Include="data\Kuafu\KuaFuRegisterData.cs" />
+    <Compile Include="data\Kuafu\KuafuResult.cs" />
+    <Compile Include="data\LayerRewardData.cs" />
+    <Compile Include="data\LeagueActivity\FamilyQuestionData.cs" />
+    <Compile Include="data\LeagueActivity\LeagueActivityData.cs" />
+    <Compile Include="data\LingDiMapInfoData.cs" />
+    <Compile Include="data\ListRolesData.cs" />
+    <Compile Include="data\LoadAlreadyData.cs" />
+    <Compile Include="data\LuaCallResultData.cs" />
+    <Compile Include="data\MailData.cs" />
+    <Compile Include="data\MailGoodsData.cs" />
+    <Compile Include="data\MallSaleData.cs" />
+    <Compile Include="data\MasterChestData.cs" />
+    <Compile Include="data\MonsterData.cs" />
+    <Compile Include="data\MonsterRealiveData.cs" />
+    <Compile Include="data\NameRegisterData.cs" />
+    <Compile Include="data\NewGoodsPackData.cs" />
+    <Compile Include="data\NewZoneActiveData.cs" />
+    <Compile Include="data\NewZoneUplevelData.cs" />
+    <Compile Include="data\NewZoneUpLevelItemData.cs" />
+    <Compile Include="data\NPCData.cs" />
+    <Compile Include="data\NPCRole.cs" />
+    <Compile Include="data\NPCTaskState.cs" />
+    <Compile Include="data\OldResourceInfo.cs" />
+    <Compile Include="data\OldTaskData.cs" />
+    <Compile Include="data\OneKeyFindFriendData.cs" />
+    <Compile Include="data\OrgBattlePBData.cs" />
+    <Compile Include="data\PaiHangData.cs" />
+    <Compile Include="data\PaiHangItemData.cs" />
+    <Compile Include="data\PetData.cs" />
+    <Compile Include="data\Platform\GMChatMessage.cs" />
+    <Compile Include="data\Platform\GMChatPlatformForward.cs" />
+    <Compile Include="data\PlayerJingJiData.cs" />
+    <Compile Include="data\PlayerJingJiEquipData.cs" />
+    <Compile Include="data\PlayerJingJiMiniData.cs" />
+    <Compile Include="data\PlayerJingJiRankingData.cs" />
+    <Compile Include="data\PlayerJingJiSkillData.cs" />
+    <Compile Include="data\PortableBagData.cs" />
+    <Compile Include="data\PushMessageData.cs" />
+    <Compile Include="data\QiangGouBuyItemData.cs" />
+    <Compile Include="data\QiangGouItemData.cs" />
+    <Compile Include="data\QiZhenGeItemData.cs" />
+    <Compile Include="data\RoleDailyData.cs" />
+    <Compile Include="data\RoleDamage.cs" />
+    <Compile Include="data\RoleData.cs" />
+    <Compile Include="data\RoleData4Selector.cs" />
+    <Compile Include="data\RoleDataAddons.cs" />
+    <Compile Include="data\RoleDataEx.cs" />
+    <Compile Include="data\RoleDataMini.cs" />
+    <Compile Include="data\RoleParamsData.cs" />
+    <Compile Include="data\SaleGoodsData.cs" />
+    <Compile Include="data\SaleGoodsSearchResultData.cs" />
+    <Compile Include="data\SaleRoleData.cs" />
+    <Compile Include="data\SchoolData.cs" />
+    <Compile Include="data\SearchRoleData.cs" />
+    <Compile Include="data\SearchTeamData.cs" />
+    <Compile Include="data\ServerShowErrorData.cs" />
+    <Compile Include="data\ShiLianTaAwardsInfoData.cs" />
+    <Compile Include="data\ShouHuShiJieData.cs" />
+    <Compile Include="data\SkillData.cs" />
+    <Compile Include="data\SpriteActionData.cs" />
+    <Compile Include="data\SpriteAttackData.cs" />
+    <Compile Include="data\SpriteAttackResultData.cs" />
+    <Compile Include="data\SpriteExtensionPropsHitedData.cs" />
+    <Compile Include="data\SpriteHitedData.cs" />
+    <Compile Include="data\SpriteInjuredData.cs" />
+    <Compile Include="data\SpriteLifeChangeData.cs" />
+    <Compile Include="data\SpriteMagicCodeData.cs" />
+    <Compile Include="data\SpriteMoveData.cs" />
+    <Compile Include="data\SpriteNotifyOtherMoveData.cs" />
+    <Compile Include="data\SpritePositionData.cs" />
+    <Compile Include="data\SpriteRelifeData.cs" />
+    <Compile Include="data\StallData.cs" />
+    <Compile Include="data\SysMailData.cs" />
+    <Compile Include="data\TaskAwardsData.cs" />
+    <Compile Include="data\TaskData.cs" />
+    <Compile Include="data\TeamData.cs" />
+    <Compile Include="data\TeamMemberData.cs" />
+    <Compile Include="data\TimePeriodBuyLimit\RoleTimePeriodBuyLimit.cs" />
+    <Compile Include="data\TodayCandoData.cs" />
+    <Compile Include="data\Trump\TrumpData.cs" />
+    <Compile Include="data\tuiguang\TuiGuangChengJiuData.cs" />
+    <Compile Include="data\tuiguang\TuiGuangData.cs" />
+    <Compile Include="data\VipDailyData.cs" />
+    <Compile Include="data\WangChengChengMapInfoData.cs" />
+    <Compile Include="data\WingData.cs" />
+    <Compile Include="data\WSActivity\WSDailyTask.cs" />
+    <Compile Include="data\WSActivity\WSDailyTaskActivity.cs" />
+    <Compile Include="data\WSActivity\WSDBSUserChargePointMallData.cs" />
+    <Compile Include="data\WSActivity\WSRechargePointMallData.cs" />
+    <Compile Include="data\WSJewel\WSJewelHoleData.cs" />
+    <Compile Include="data\WSJewel\WSJewelHoleDBData.cs" />
+    <Compile Include="data\WSJewel\WSJewelHolesInfoData.cs" />
+    <Compile Include="data\WSXianMaiChongZhu\WSRoleXianMaiChongZhuData.cs" />
+    <Compile Include="data\WSXianMaiChongZhu\WSRoleXianMaiChongZhuExtraData.cs" />
+    <Compile Include="data\WSXianMaiChongZhu\WSXianMaiChongZhuData.cs" />
+    <Compile Include="data\WSXianMaiChongZhu\WSXianMaiChongZhuDatas.cs" />
+    <Compile Include="data\XianMaiDailyAward\XianmaiDailyAward.cs" />
+    <Compile Include="data\XinFuActivityData.cs" />
+    <Compile Include="data\XinfuLoginData.cs" />
+    <Compile Include="data\YaBiaoData.cs" />
+    <Compile Include="data\YangGongBKDailyJiFenData.cs" />
+    <Compile Include="data\YueduchoujiangRanking\YueduchoujiangRankingData.cs" />
+    <Compile Include="data\YueKa\YueKaData.cs" />
     <Compile Include="DateHeler.cs" />
+    <Compile Include="Defines.cs" />
     <Compile Include="NewCrypt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +263,7 @@
     <Compile Include="Protocol\TCPOutPacketPool.cs" />
     <Compile Include="Protocol\TCPPolicy.cs" />
     <Compile Include="Protocol\UserLoginToken.cs" />
+    <Compile Include="Role.cs" />
     <Compile Include="ServiceThread.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,5 +272,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
